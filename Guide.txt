@@ -1,0 +1,218 @@
+Machine Learning Viva Preparation Guide
+========================================
+This document covers detailed explanations and viva questions for each of the 7 Machine Learning assignments.
+
+Assignment 1: Basic Data Operations
+-----------------------------------
+Objective:
+Perform various data operations in Python/R including reading data, identifying shapes, handling missing values, and performing indexing and conversions.
+
+Key Concepts:
+- Reading files: `read_csv`, `read_excel`
+- Data shapes: `df.shape`, `df.info()`
+- Missing values: `df.isnull().sum()`
+- Data types: `df.dtypes`, `astype()`
+- Indexing: `.loc[]`, `.iloc[]`
+- Unique values: `nunique()`, `value_counts()`
+
+Viva Questions:
+Q1. How do you read a CSV or Excel file?
+A1. Using `pandas`:
+    - CSV: `pd.read_csv("filename.csv")`
+    - Excel: `pd.read_excel("filename.xlsx")`
+
+Q2. How do you check the shape of a dataset?
+A2. Use `df.shape` which returns a tuple of (rows, columns).
+
+Q3. How do you check for missing values?
+A3. `df.isnull().sum()` gives the count of nulls per column.
+
+Q4. How to change data type of a column?
+A4. `df['column'] = df['column'].astype(int/float/str)`
+
+Q5. How to find all zero entries?
+A5. `df[df == 0].count()` gives count of zeros column-wise.
+
+Q6. What is the difference between `.loc` and `.iloc`?
+A6. `.loc[]` is label-based; `.iloc[]` is index-based.
+
+Q7. How to count unique values in a column?
+A7. Use `df['column'].nunique()` or `value_counts()`.
+
+Q8. How do you sort a dataset?
+A8. Use `df.sort_values(by='column_name', ascending=True/False)`
+
+Assignment 2: Summary Stats, Cleaning & Classification
+-------------------------------------------------------
+Objective:
+Compute summary statistics, clean data, transform it, and build a classification model.
+
+Key Concepts:
+- Descriptive stats: `mean()`, `std()`, `var()`, `describe()`
+- Visualization: Histogram
+- Cleaning: Removing nulls, duplicates
+- Integration/Transformation: Normalization, encoding
+- Classification: Decision Tree, Logistic Regression
+
+Viva Questions:
+Q1. What are summary statistics?
+A1. Measures like mean, median, mode, std dev, variance, range.
+
+Q2. How do you clean a dataset?
+A2. Handling missing values (drop/fill), removing duplicates.
+
+Q3. What is normalization and when do you use it?
+A3. Scaling data between 0 and 1. Use when features have different units.
+
+Q4. What classifier did you use and why?
+A4. Example: Decision Tree – interpretable, handles both types of data.
+
+Q5. How did you prepare the data for modeling?
+A5. Filled missing values, encoded categorical data, used train-test split.
+
+Q6. What is the use of `train_test_split`?
+A6. To divide data into training and testing sets. From `sklearn.model_selection`.
+
+Assignment 3: Data Visualization
+--------------------------------
+Objective:
+Plot different graphs like scatter, bar, box, pie, and line charts for data analysis.
+
+Key Concepts:
+- Scatter plot: `plt.scatter(x, y)`
+- Bar chart: `plt.bar()`
+- Box plot: `sns.boxplot()`
+- Pie chart: `plt.pie()`
+- Line chart: `plt.plot()`
+
+Viva Questions:
+Q1. What is the use of scatter plot?
+A1. To visualize the relationship between two numerical variables.
+
+Q2. Difference between histogram and bar chart?
+A2. Histogram: bins of numeric data. Bar chart: categories.
+
+Q3. What is shown in a box plot?
+A3. Distribution summary: median, IQR, outliers.
+
+Q4. What libraries are used for visualization?
+A4. `matplotlib`, `seaborn`, `pandas` (basic plots)
+
+Q5. How do you interpret a pie chart?
+A5. Used for displaying proportion of categories in a whole.
+
+Q6. How to customize plots?
+A6. Use `plt.title()`, `plt.xlabel()`, `plt.ylabel()`, `plt.legend()`
+
+Assignment 4: Classification + Confusion Matrix
+-----------------------------------------------
+Objective:
+Apply classification to predict customer response. Evaluate using confusion matrix.
+
+Key Concepts:
+- Confusion Matrix
+- Accuracy, Precision, Recall, F1 Score
+- Classification Algorithms
+
+Viva Questions:
+Q1. What is a confusion matrix?
+A1. A table showing TP, TN, FP, FN from predictions.
+
+Q2. Define Accuracy.
+A2. Accuracy = (TP + TN) / Total predictions.
+
+Q3. Define Precision and Recall.
+A3. 
+    Precision = TP / (TP + FP)
+    Recall = TP / (TP + FN)
+
+Q4. What is the F1 Score?
+A4. Harmonic mean of Precision and Recall:
+    F1 = 2 * (P * R) / (P + R)
+
+Q5. Which algorithm was used?
+A5. Example: Logistic Regression or Decision Tree.
+
+Q6. What is the impact of class imbalance?
+A6. Accuracy might be misleading. Use precision/recall or F1 score.
+
+Assignment 5: Clustering on Mall Customer Data
+----------------------------------------------
+Objective:
+Apply clustering (KMeans, Hierarchical) to segment mall customers based on spending score.
+
+Key Concepts:
+- Clustering (unsupervised)
+- Elbow method
+- Silhouette score (optional)
+- KMeans, Agglomerative
+
+Viva Questions:
+Q1. What is KMeans Clustering?
+A1. Algorithm that partitions data into K groups based on distance to centroid.
+
+Q2. How do you determine the best K?
+A2. Use Elbow Method (plot inertia vs K).
+
+Q3. Difference between KMeans and Hierarchical Clustering?
+A3. KMeans: flat partition. Hierarchical: tree-like clusters.
+
+Q4. What preprocessing is done before clustering?
+A4. Scaling, normalization, handling missing values.
+
+Q5. What is inertia in KMeans?
+A5. Sum of squared distances between samples and their cluster centroid.
+
+Assignment 6: Regression on Temperature Data
+--------------------------------------------
+Objective:
+Use linear regression to predict temperature and evaluate the model.
+
+Key Concepts:
+- Linear Regression
+- MSE, MAE, R² Score
+- Regression line visualization
+
+Viva Questions:
+Q1. What is Linear Regression?
+A1. A model that fits a line through data points to predict a continuous variable.
+
+Q2. What is the difference between MAE and MSE?
+A2. MAE: average absolute error. MSE: average of squared errors.
+
+Q3. What is R² score?
+A3. Proportion of variance in dependent variable explained by the model.
+
+Q4. How do you visualize the regression model?
+A4. Using scatter plot and fitted regression line.
+
+Q5. How did you evaluate the model?
+A5. Using metrics: MAE, MSE, R² from `sklearn.metrics`.
+
+Assignment 7: Classification on Graduate Admission Data
+--------------------------------------------------------
+Objective:
+Use decision tree classifier to predict student admission status based on GRE, GPA, etc.
+
+Key Concepts:
+- Label Encoding
+- Decision Tree
+- Train-test split
+- Model Evaluation
+
+Viva Questions:
+Q1. What preprocessing was required?
+A1. Label encoding for categorical variables, handling nulls.
+
+Q2. Why use a decision tree?
+A2. Interpretable, works with both numeric and categorical data.
+
+Q3. What are the pros and cons of Decision Trees?
+A3. Pros: Easy to interpret. Cons: Prone to overfitting.
+
+Q4. What is the target variable?
+A4. `Admitted` column (1 = yes, 0 = no)
+
+Q5. How was model performance evaluated?
+A5. Using Accuracy, Confusion Matrix from `sklearn.metrics`.
+
